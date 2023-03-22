@@ -11,7 +11,7 @@ class  ScreenA extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
+          children: <Widget>[
             ElevatedButton(
                 onPressed: (){
                   Navigator.pushNamed(context, '/b');
