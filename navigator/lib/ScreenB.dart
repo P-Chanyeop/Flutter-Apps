@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ScreenA.dart';
+
 class  ScreenB extends StatelessWidget {
 
   @override
@@ -9,10 +11,27 @@ class  ScreenB extends StatelessWidget {
         title: Text('ScreenB'),
       ),
       body: Center(
-        child: Text('ScreenB',
-        style: TextStyle(
-          fontSize: 24.0
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('ScreenB',
+            style: TextStyle(
+              fontSize: 24.0
+              ),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (_) => ScreenA()));
+              },
+              child: Text('Go to ScreenA'),
+            ),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.pushNamed(context, '/c');
+              },
+              child: Text('Go to ScreenC'),
+            ),
+          ],
         ),
       ),
     );
