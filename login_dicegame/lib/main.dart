@@ -44,7 +44,15 @@ class _LoginState extends State<Login> {
           ),
         ],
       ),
-      body: Column(
+      body:
+      Builder(
+        builder: (context) {
+      return GestureDetector(
+          onTap: (){
+            FocusScope.of(context).unfocus();
+          },
+          child: SingleChildScrollView(
+      child: Column(
         children: <Widget>[
           Padding(
             padding: EdgeInsets.only(top: 50),
@@ -69,68 +77,66 @@ class _LoginState extends State<Login> {
                 ),
                 child: Container(
                   padding: EdgeInsets.all(40.0),
-                  child: Builder(
-                    builder: (context) {
-                      return SingleChildScrollView(
-                        child: Column(
-                          children: <Widget>[
-                            TextField(
-                              controller: dice,
-                              decoration: InputDecoration(
-                                labelText: 'Enter "dice"',
-                              ),
-                              keyboardType: TextInputType.emailAddress,
-                            ),
-                            TextField(
-                              controller: password,
-                              decoration: InputDecoration(
-                                labelText: 'Enter Password',
-                              ),
-                              keyboardType: TextInputType.text,
-                              obscureText: true,
-                            ),
-                            SizedBox(
-                              height: 40.0,
-                            ),
-                            ButtonTheme(
-                              minWidth: 100,
-                              height: 50.0,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  primary: Colors.black,
+                          child: Column(
+                            children: <Widget>[
+                              TextField(
+                                controller: dice,
+                                decoration: InputDecoration(
+                                  labelText: 'Enter "dice"',
                                 ),
-                                onPressed: () {
-                                  if (dice.text == "dice" &&
-                                      password.text == "1234") {
-                                    Navigator.push(context,
-                                        MaterialPageRoute(
-                                            builder: (BuildContext context) => Dice())
-                                    );
-                                  }
-                                  else {
-                                    showSnackBar(context);
-                                  }
-                                },
-                                child: Icon(
-                                  Icons.arrow_forward,
-                                  color: Colors.white,
-                                  size: 45.0,
+                                keyboardType: TextInputType.emailAddress,
+                              ),
+                              TextField(
+                                controller: password,
+                                decoration: InputDecoration(
+                                  labelText: 'Enter Password',
+                                ),
+                                keyboardType: TextInputType.text,
+                                obscureText: true,
+                              ),
+                              SizedBox(
+                                height: 40.0,
+                              ),
+                              ButtonTheme(
+                                minWidth: 100,
+                                height: 50.0,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    primary: Colors.black,
+                                  ),
+                                  onPressed: () {
+                                    if (dice.text == "dice" &&
+                                        password.text == "1234") {
+                                      Navigator.push(context,
+                                          MaterialPageRoute(
+                                              builder: (BuildContext context) => Dice())
+                                      );
+                                    }
+                                    else {
+                                      showSnackBar(context);
+                                    }
+                                  },
+                                  child: Icon(
+                                    Icons.arrow_forward,
+                                    color: Colors.white,
+                                    size: 45.0,
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      );
-                    }
-                  ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-          ),
-        ],
-      ),
-    );
+            );
+          }
+        )
+      );
+    }
   }
-}
 
 
 void showSnackBar(BuildContext context){
