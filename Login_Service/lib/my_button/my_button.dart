@@ -11,15 +11,18 @@ class MyButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return  ButtonTheme(
       height: 50.0,
       child: ElevatedButton(
         onPressed: onPressed,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             image,
+            SizedBox(
+              width: 50,
+            ),
             text,
             Opacity(
               opacity: 0.0,
