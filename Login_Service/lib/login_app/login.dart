@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_service/my_button/my_button.dart';
 import 'package:login_service/my_button/none_image_button.dart';
+import 'package:login_service/login_app/home.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -9,7 +10,17 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        automaticallyImplyLeading: false,
+        actions: [
+          MyButton(image: Icon(Icons.home, size: 20,),
+              text: Text("Home", style: TextStyle(color: Colors.black87, fontSize: 15.0),),
+              color: Colors.white,
+              onPressed: (){
+                Navigator.popAndPushNamed(context, '/home');
+              }
+          ),
+        ],
+        backgroundColor: Colors.cyan,
         title: Text(
             '로그인 및 회원가입',
           style: TextStyle(color: Colors.white),
