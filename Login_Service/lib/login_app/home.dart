@@ -151,7 +151,9 @@ class Home extends StatelessWidget {
                                 // 글자 3D 입체감 높이
                                 elevation: 30.0,
                               ),
-                              onPressed: (){},
+                              onPressed: (){
+                                Navigator.popAndPushNamed(context, '/calendar');
+                              },
                               child: Column(
                                 children: [
                                   Image.asset(

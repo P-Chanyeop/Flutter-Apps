@@ -11,8 +11,9 @@ class ToDoList extends StatefulWidget{
 }
 
 class _ToDoList extends State<ToDoList> {
-  final ScrollController _firstController = ScrollController();
+  final ScrollController _scrollController = ScrollController();
   String todoList = '';
+  bool isSwitched2 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +65,7 @@ class _ToDoList extends State<ToDoList> {
               onSubmitted: (text) {
                 if (text.length > 0 && text.length <= 50){
                   setState(() {
-                  todoList = text;
+                    todoList = text;
                   });
                 }
               },
@@ -75,7 +76,22 @@ class _ToDoList extends State<ToDoList> {
                 helperStyle: TextStyle(fontSize: 18.0, fontWeight: FontWeight.w400),
               ),
             ),
-            Text(todoList),
+            SizedBox(height: 50,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(todoList,),
+                Switch(
+                  value: isSwitched2,
+                  onChanged: (value) {
+                    setState(() {
+                      isSwitched2 = value;
+                    });
+                  },
+                  activeColor: Colors.blue,
+                ),
+              ],
+            ),
           ],
         ),),
       ),
