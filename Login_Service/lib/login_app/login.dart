@@ -13,7 +13,7 @@ class Login extends StatelessWidget {
         automaticallyImplyLeading: false,
         actions: [
           MyButton(image: Icon(Icons.home, size: 20,),
-              text: Text("Home", style: TextStyle(color: Colors.black87, fontSize: 15.0),),
+              text: Text("Home", style: TextStyle(color: Colors.black87, fontSize: 20.0),),
               color: Colors.white,
               onPressed: (){
                 Navigator.popAndPushNamed(context, '/home');
@@ -23,12 +23,25 @@ class Login extends StatelessWidget {
         backgroundColor: Colors.cyan,
         title: Text(
             '로그인 및 회원가입',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 30.0,
+          ),
         ),
         centerTitle: true,
         elevation: 0.2,
       ),
-      body: _buildButton(),
+      body: Container(
+        child: _buildButton(),
+        decoration: BoxDecoration(
+            image: DecorationImage(
+              colorFilter: ColorFilter.mode(Colors.white.withOpacity(0.5), BlendMode.dstATop),
+              image: AssetImage('images/white_bg.jpg'),
+              fit: BoxFit.cover,
+            )
+        ),
+      ),
+
     );
   }
 
