@@ -70,7 +70,6 @@ class Login extends StatelessWidget {
           TextField(
             maxLength: 15,
             obscureText: true,
-
             decoration: InputDecoration(
               border: OutlineInputBorder(),
               labelText: "PASSWORD",

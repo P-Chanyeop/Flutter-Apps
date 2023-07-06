@@ -110,6 +110,7 @@ class Home extends StatelessWidget {
                                 elevation: 30.0,
                               ),
                               onPressed: (){
+                                Navigator.popAndPushNamed(context, '/diary');
                               },
                               child: Column(
                                 children: [
@@ -188,7 +189,9 @@ class Home extends StatelessWidget {
                                 // 글자 3D 입체감 높이
                                 elevation: 30.0,
                               ),
-                              onPressed: (){},
+                              onPressed: (){
+                                Navigator.popAndPushNamed(context, '/progress');
+                              },
                               child: Column(
                                 children: [
                                   Image.asset(
@@ -198,7 +201,7 @@ class Home extends StatelessWidget {
                                   ),
                                   SizedBox(height: 5, width: 100,),
                                   Text(
-                                      "진행도",
+                                      "나의 의지",
                                     style: TextStyle(
                                       fontFamily: 'omyu',
                                       fontWeight: FontWeight.w700,

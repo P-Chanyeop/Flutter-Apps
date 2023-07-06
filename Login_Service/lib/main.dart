@@ -3,6 +3,8 @@ import 'login_app/login.dart';
 import 'login_app/home.dart';
 import 'login_app/todolist.dart';
 import 'login_app/calendar.dart';
+import 'login_app/diary.dart';
+import 'login_app/progress.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,6 +28,8 @@ class MyApp extends StatelessWidget {
         '/login' : (context) => Login(),
         '/todolist' : (context) => ToDoList(),
         '/calendar' : (context) => Calendar(),
+        '/diary' : (context) => Diary(),
+        '/progress' : (context) => Progress(),
       },
       home: Login(),
     );
