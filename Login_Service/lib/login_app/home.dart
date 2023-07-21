@@ -196,6 +196,7 @@ class Home extends StatelessWidget {
                               child: Column(
                                 children: [
                                   Image.asset(
+
                                     "images/Progress.gif",
                                     width: 100,
                                     height: 100,
