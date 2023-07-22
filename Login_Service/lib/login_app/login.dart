@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login_service/my_button/my_button.dart';
 import 'package:login_service/my_button/none_image_button.dart';
 import 'package:login_service/login_app/home.dart';
+import 'package:login_service/login_app/signup.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -33,7 +34,7 @@ class Login extends StatelessWidget {
             elevation: 0.2,
           ),
           body: Container(
-            child: _buildButton(),
+            child: _buildButton(context),
             decoration: BoxDecoration(
                 image: DecorationImage(
                   colorFilter: ColorFilter.mode(Colors.white.withOpacity(0.5), BlendMode.dstATop),
@@ -47,9 +48,7 @@ class Login extends StatelessWidget {
     );
   }
 
-  Widget _buildButton() {
-
-
+  Widget _buildButton(BuildContext context) {
 
     return SafeArea(
         child:Padding(
@@ -102,7 +101,9 @@ class Login extends StatelessWidget {
                     style: TextStyle(color: Colors.black87, fontSize: 15.0),
                   ),
                   color: Colors.white,
-                  onPressed: (){}
+                  onPressed: (){
+                    Navigator.popAndPushNamed(context, "/signup");
+                  }
               ),
 
               // 로그인 및 회원가입 버튼 end
