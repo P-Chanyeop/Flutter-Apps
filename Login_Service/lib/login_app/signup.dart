@@ -86,7 +86,6 @@ class _SignUp extends State<SignUp> {
                 validator: (val){
                   if (pw2 == ""){
                     print("비밀번호가 비어있음");
-
                   }else{
                     print("good");
                   }
